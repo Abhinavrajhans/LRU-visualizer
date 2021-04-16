@@ -1,0 +1,23 @@
+.heroo {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 20vh;
+}
+
+.heroo input {
+  margin-top: 3rem;
+  padding: 1rem 2rem;
+  font-size: larger;
+  font-weight: bold;
+  border: none;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+}
+.heroo button {
+  padding: 1rem 2rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border: none;
+  color: white;
+  background: #000000;
+}

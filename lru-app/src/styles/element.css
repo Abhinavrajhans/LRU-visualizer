@@ -1,0 +1,8 @@
+.hero {
+  width: 15rem;
+  padding: 1rem 2rem;
+  border: 15px solid green;
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.5rem;
+}
