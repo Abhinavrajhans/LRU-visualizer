@@ -1,13 +1,26 @@
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
 import "../styles/write.css";
-const Write = ({ nodes, setNodes, textInput, setTextInput, setTell }) => {
+const Write = ({
+  nodes,
+  setNodes,
+  textInput,
+  setTextInput,
+  setTell,
+  setpagefault,
+  pagefault,
+}) => {
   const inputhandler = (e) => {
     e.preventDefault();
     setTextInput(e.target.value);
   };
+
   const submitSearch = async (e) => {
     e.preventDefault();
+    for (let i = 0; i < nodes.length; i++) {
+      nodes[i].istrue = "white";
+      nodes[i].color = "black";
+    }
     let n = nodes.length,
       flag = -1,
       number = parseInt(textInput);
@@ -21,26 +34,32 @@ const Write = ({ nodes, setNodes, textInput, setTextInput, setTell }) => {
       }
     }
     if (flag === -1) {
-      setTell("PAGE FAULT");
-      if (nodes.length > 4) {
+      if (textInput !== "" && textInput !== " ") {
+        setTell("PAGE FAULT");
+        setpagefault(parseInt(pagefault) + parseInt(1));
+      }
+      if (nodes.length > 4 && textInput !== "" && textInput !== "") {
         for (let i = 0; i < n - 1; i++) {
           nodes[i].message = nodes[i + 1].message;
           nodes[i].id = nodes[i + 1].id;
           nodes[i].index = i;
           nodes[i].istrue = "red";
+          nodes[i].color = "white";
         }
         nodes[n - 1].message = textInput;
         nodes[n - 1].id = uuidv4();
         nodes[n - 1].index = n - 1;
         nodes[n - 1].istrue = "green";
-      } else
+        nodes[n - 1].color = "white";
+      } else if (textInput !== "" && textInput !== " ")
         setNodes([
           ...nodes,
           {
             message: textInput,
             id: uuidv4(),
             index: nodes.length,
-            istrue: "white",
+            istrue: "green",
+            color: "white",
           },
         ]);
     } else {
@@ -51,11 +70,13 @@ const Write = ({ nodes, setNodes, textInput, setTextInput, setTell }) => {
         nodes[i].id = nodes[i + 1].id;
         nodes[i].index = i;
         nodes[i].istrue = "red";
+        nodes[i].color = "white";
       }
       nodes[n - 1].message = textInput;
       nodes[n - 1].id = uuidv4();
       nodes[n - 1].index = n - 1;
       nodes[n - 1].istrue = "green";
+      nodes[n - 1].color = "white";
     }
     setTextInput("");
   };
