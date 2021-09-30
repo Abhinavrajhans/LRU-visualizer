@@ -1,12 +1,12 @@
-import "./App.css";
-import React, { useState } from "react";
-import Grid from "./components/grid";
-import Write from "./components/write";
+import './App.css'
+import React, { useState } from 'react'
+import Grid from './components/grid'
+import Write from './components/write'
 function App() {
-  const [nodes, setNodes] = useState([]);
-  const [textInput, setTextInput] = useState("");
-  const [tell, setTell] = useState("Hi");
-  const [pagefault, setpagefault] = useState(0);
+  const [nodes, setNodes] = useState([])
+  const [textInput, setTextInput] = useState('')
+  const [tell, setTell] = useState('Hi')
+  const [pagefault, setpagefault] = useState(0)
   return (
     <div className="visual">
       <h1 className="title">LRU VISUALIZER</h1>
@@ -29,7 +29,7 @@ function App() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
