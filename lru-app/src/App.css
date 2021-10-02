@@ -1,10 +1,10 @@
 .visual h1 {
 	text-align: center;
-	margin-top: 50px;
+	margin-top: 51px;
 }
 .visual {
 	width: 100%;
-	min-height: 80vh;
+	min-height: 81vh;
 }
 .title {
 	color: black;
@@ -23,11 +23,11 @@ body {
 	box-sizing: border-box;
 }
 .page {
-	border: 1px solid black;
+	border: 1px solid red;
 	padding: 1rem 1rem;
 	margin: 1rem 0rem;
-	border: 1px solid aqua;
-	box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+	border: 1px solid black;
+	box-shadow: 0px 5px 20px rgba(0, 0, 0.1, 0.2);
 	background: black;
 }
 .page1 {
